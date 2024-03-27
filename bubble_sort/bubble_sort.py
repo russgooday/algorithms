@@ -1,7 +1,7 @@
 '''bubblesort function'''
 
 def bubble_sort(lst: list) -> list:
-    '''sorts a list in ascending order'''
+    '''sorts list in ascending order'''
     indexes_to_be_sorted = len(lst)
     sorted_list = False
 
