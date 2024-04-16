@@ -1,6 +1,5 @@
 def merge_sort(lst: list) -> list:
-
-    if (len(lst) == 1):
+    if len(lst) <= 1:
         return lst
 
     middle = len(lst) // 2
@@ -10,13 +9,12 @@ def merge_sort(lst: list) -> list:
     return merge(left, right)
 
 def merge(left, right):
-    # print(f'left: {left}, right: {right}')
     target = []
-    leftLen = len(left)
-    rightLen = len(right)
+    left_len = len(left)
+    right_len = len(right)
     i = j = 0
 
-    while i < leftLen and j < rightLen:
+    while i < left_len and j < right_len:
         if left[i] < right[j]:
             target.append(left[i])
             i += 1
@@ -25,14 +23,12 @@ def merge(left, right):
             j += 1
 
     # clean up remaining numbers
-    while i < leftLen:
+    while i < left_len:
         target.append(left[i])
         i += 1
 
-    while j < rightLen:
+    while j < right_len:
         target.append(right[j])
         j += 1
 
     return target
-
-print(merge_sort([9, 12, 15, 2, 6, 7, 11]))
